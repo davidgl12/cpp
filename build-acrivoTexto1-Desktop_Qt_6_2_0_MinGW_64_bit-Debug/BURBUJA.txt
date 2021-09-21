@@ -1,0 +1,29 @@
+
+
+1.- Realice las modificaciones necesarias al método Burbuja para que permita ordenar cadenas
+
+void BurbujaDsc(int *vec, int n)
+        {
+            int comp = 0;
+            int interc = 0;
+            for (int i = 0; i < n-1-1; i++)
+            {
+                for (int j = n - 1; i < j; j--)
+                {
+                    comp++;
+                    if (vec[j - 1] < vec[j])
+                    {
+                        int aux = vec[j - 1];
+                        vec[j - 1] = vec[j];
+                        vec[j] = aux;
+                        interc++;
+                    }
+                }
+            }
+            printf("\nNo. de Comparaciones : %d ",comp);
+            printf("\nNo. de intercambios  : %d \n", interc);
+
+        }
+
+
+2.- Agregue un método para buscar una cadena. El método deberá devolver si o no lo encontró y en caso de encontrarlo regresará la posición.
