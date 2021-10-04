@@ -4,15 +4,17 @@
 #include <stdio.h>
 #include <string.h>
 
+class ArchivosDeC
+{
 
-class ArchivosDeC{
 public:
     ArchivosDeC();
-    void abrir(char *nomArch, char cadenas[50][25], int &cant);
+    void abrir(char *nomArch);
 
-    void guardar(char *nomArch, char cadenas[50][25]);
+    void abrir(char *nomArch, char cadenas[50][25],int &);
 
-    void agregar(char *nomArch, char cadenas[50][25]);
+    void guardar(char *nombArch, char cadenas[50][25]);
+    void agregar(char nombArch[], char cadenas[50][25], int n);
 
 };
 
