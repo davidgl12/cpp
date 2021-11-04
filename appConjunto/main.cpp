@@ -1,5 +1,6 @@
 #include <iostream>
 #include "conjunto.h"
+#include <time.h>
 using namespace std;
 
 void menu(int &op)//REGRESA LA OPCION POR REFERENCIA
@@ -37,14 +38,29 @@ int main()
                 Mensaje mensaje;
                 int conj, val;
                 int cont = 0;
+                char c;
+                cout << " Agregar de forma aleatoria?(s/n)" << endl;
+                cin >> c;
                 while(cont < 10)
                 {
-                    cout << " Conjunto(1,2) ? : ";
-                    cin >> conj;
+
+                    if(c == 's'){
+                        //srand((unsigned)time(0));
+                        conj = (rand()%2)+1;
+                    }else{
+                        cout << " Conjunto(1,2) ? : ";
+                        cin >> conj;
+                    }
+
                     if(conj == 1)
                     {
-                        cout << " Valor : ";
-                        cin >> val;
+                        if(c == 's'){
+                            //srand((unsigned)time(0));
+                            val = (rand()%100)+1;
+                        }else{
+                            cout << " Valor : ";
+                            cin >> val;
+                        }
                         cout << " VALOR PARA EL CONJUNTO 1 : " << val << endl;
                         mensaje = set1.agregarElemento(val);
                         // mensaje = set1 + val; //CON SOBRECARGA
@@ -57,8 +73,13 @@ int main()
                     }
                     if(conj == 2)
                     {
-                        cout << " Valor : ";
-                        cin >> val;
+                        if(c == 's'){
+                            //srand((unsigned)time(0));
+                            val = (rand()%100)+1;
+                        }else{
+                            cout << " Valor : ";
+                            cin >> val;
+                        }
                         cout << " VALOR PARA EL CONJUNTO 2 : " << val << endl;
                         mensaje = set2.agregarElemento(val);
                         // mensaje = set2 + val; //CON SOBRECARGA
@@ -92,7 +113,7 @@ int main()
         case 3:
             set1.mostrarElementos(" 1 ");
             set2.mostrarElementos(" 2 ");
-            set2.mostrarElementos(" 3 ");
+            set3.mostrarElementos(" 3 ");
             break;
         case 4:{
             int resp = 0;
